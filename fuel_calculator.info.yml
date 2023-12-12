@@ -1,0 +1,8 @@
+name: 'Fuel calculator'
+type: module
+description: 'Fuel calculator'
+package: Custom
+core_version_requirement: ^10
+dependencies:
+  - rest:rest
+  - drupal:dblog

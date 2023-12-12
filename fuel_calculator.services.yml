@@ -1,0 +1,11 @@
+services:
+  fuel_calculator.calculator:
+    class: Drupal\fuel_calculator\FuelCalculator
+  fuel_calculator.input_fields_validator:
+      class: Drupal\fuel_calculator\FuelCalculatorInputFieldsValidator
+  fuel_calculator.calculate_fuel_handler:
+        class: Drupal\fuel_calculator\CalculateFuelHandler
+        arguments: [ '@fuel_calculator.calculator', '@fuel_calculator.calculate_fuel_log_builder', '@logger.factory']
+  fuel_calculator.calculate_fuel_log_builder:
+        class: Drupal\fuel_calculator\CalculateFuelLogBuilder
+        arguments: [ '@request_stack', '@current_user']
